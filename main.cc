@@ -91,7 +91,7 @@ void function5() {
 void function6() {
     std::string str;
     std::cout << "请输入一个字符串: ";
-    std::cin.ignore();
+    std::cin.clear();
     std::getline(std::cin, str);
 
     // 移除空格并转换为小写
