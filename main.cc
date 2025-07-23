@@ -87,6 +87,40 @@ void function5() {
     std::cout << std::endl;
 }
 
+// 子函数6：判断字符串是否为回文
+void function6() {
+    std::string str;
+    std::cout << "请输入一个字符串: ";
+    std::cin.ignore();
+    std::getline(std::cin, str);
+
+    // 移除空格并转换为小写
+    std::string processed;
+    for (char c : str) {
+        if (!std::isspace(c)) {
+            processed += std::tolower(c);
+        }
+    }
+
+    // 判断是否为回文
+    bool isPalindrome = true;
+    int left = 0;
+    int right = processed.length() - 1;
+
+    while (left < right) {
+        if (processed[left] != processed[right]) {
+            isPalindrome = false;
+            break;
+        }
+        left++;
+        right--;
+    }
+
+    std::cout << "\"" << str << "\""
+              << (isPalindrome ? " 是回文" : " 不是回文")
+              << std::endl;
+}
+
 int main(int argc, char* argv[]) {
     if (argc != 2) {
         std::cerr << "用法: " << argv[0] << " [1-5]" << std::endl;
@@ -102,7 +136,8 @@ int main(int argc, char* argv[]) {
         function2,    // 2
         function3,    // 3
         function4,    // 4
-        function5     // 5
+        function5,    // 5
+        function6     // 6
     };
     
     if (choice < 1 || choice >= functions.size()) {
