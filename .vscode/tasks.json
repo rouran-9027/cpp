@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build all",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "main.cc",
+                "sub1/function1.cc",
+                "sub1/function2.cc",
+                "sub1/function3.cc",
+                "sub1/function4.cc",
+                "sub1/function5.cc",
+                "sub1/function6.cc",
+                "sub1/function7.cc",
+                "-g",
+                "-o",
+                "main"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+}
